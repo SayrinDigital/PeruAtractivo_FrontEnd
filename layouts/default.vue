@@ -1,7 +1,7 @@
 <template>
   <div>
     <no-ssr>
-      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky sticky-navbar-item">
         <Navigator></Navigator>
       </div>
     </no-ssr>

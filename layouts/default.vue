@@ -1,6 +1,9 @@
 <template>
   <div>
-     <Navigator></Navigator>
+    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+      <Navigator></Navigator>
+    </div>
+
     <nuxt />
     <Footer></Footer>
       <div class="preloader uk-position-cover uk-position-fixed"></div>

@@ -1,8 +1,10 @@
 <template>
   <div>
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-      <Navigator></Navigator>
-    </div>
+    <no-ssr>
+      <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+        <Navigator></Navigator>
+      </div>
+    </no-ssr>
 
     <nuxt />
     <Footer></Footer>

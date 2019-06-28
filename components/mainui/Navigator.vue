@@ -1,6 +1,6 @@
 <template>
 <div class="fix-nav" >
-  <div uk-sticky=" cls-active: uk-navbar-sticky sticky-navbar-item;">
+  <div data-uk-sticky>
   <nav id="mainnav"   class="uk-navbar-container uk-navbar-transparent"   uk-navbar>
 
     <div class="uk-navbar-left uk-visible@s">

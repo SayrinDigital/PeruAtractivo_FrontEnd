@@ -1,6 +1,6 @@
 <template>
 <div class="fix-nav" >
-  <div data-uk-sticky>
+  <div>
   <nav id="mainnav"   class="uk-navbar-container uk-navbar-transparent"   uk-navbar>
 
     <div class="uk-navbar-left uk-visible@s">

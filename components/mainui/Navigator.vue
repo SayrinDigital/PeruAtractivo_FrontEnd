@@ -1,6 +1,6 @@
 <template>
 <div class="fix-nav" >
-  <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky sticky-navbar-item; bottom: #transparent-sticky-navbar">
+
   <nav id="mainnav"   class="uk-navbar-container uk-navbar-transparent"   uk-navbar>
 
     <div class="uk-navbar-left uk-visible@s">
@@ -62,7 +62,7 @@
 
     </div>
   </nav>
-</div>
+
 
   <div class="nav-expander uk-visible@s">
     <div class="uk-position-relative">

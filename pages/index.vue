@@ -1,0 +1,153 @@
+<template>
+<div>
+  <section class="uk-cover-container fix-position-nav main-header-home">
+    <video autoplay loop muted playsinline uk-cover>
+        <source :src="$prismic.asLink(home.background)" type="video/mp4">
+    </video>
+    <div class="uk-position-cover overlay"></div>
+    <div class="uk-section uk-position-cover  uk-flex uk-flex-middle uk-flex-center">
+      <div class="uk-container uk-container-large uk-text-center">
+        <div>
+          <div class="uk-height-small uk-hidden@s"></div>
+          <p class="light head">{{ $prismic.asText(home.subtitulo) }}</p>
+          <h1 class="uk-width-xlarge@m uk-margin-auto uk-margin-remove-top light main-heading">{{ $prismic.asText(home.encabezado_principal) }}</h1>
+          <div class="uk-margin-large-top uk-hidden">
+            <a class="hl-link-white uk-display-inline-block" href="">{{ $prismic.asText(home.boton_explorar_titulo) }}<span class="uk-margin-small-left" uk-icon="minus"></span></a>
+          </div>
+        </div>
+          <section class="searcher uk-position-relative">
+            <div class="uk-container">
+              <div class="container">
+                <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
+                  <div class="uk-width-2-5@s">
+                    <div>
+                      <div>
+                        <div class="uk-inline uk-width-1-1">
+                          <span class="uk-form-icon"><fa :icon="['fas', 'map']"  /></span>
+                          <input class="uk-input uk-form-blank blank-form uk-width-1-1" :placeholder="$prismic.asText(home.buscador_contenido)" type="text">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="uk-width-2-5@s">
+                    <div class="uk-child-width-1-2 uk-text-left@s uk-text-center uk-flex uk-flex-middle" uk-grid>
+                      <div>
+                        <div>
+                          <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
+                          <div>
+                            <div uk-form-custom="target: > * > span:first-child">
+                              <select>
+                                  <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                                  <option value="1">Option 01</option>
+                                  <option value="2">Option 02</option>
+                                  <option value="3">Option 03</option>
+                                  <option value="4">Option 04</option>
+                            </select>
+                              <p class="desc light uk-margin-remove">
+                                <span></span>
+                                <span uk-icon="icon: chevron-down"></span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <div>
+                          <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
+                          <div>
+                            <div uk-form-custom="target: > * > span:first-child">
+                              <select>
+                                  <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                                  <option value="1">Option 01</option>
+                                  <option value="2">Option 02</option>
+                                  <option value="3">Option 03</option>
+                                  <option value="4">Option 04</option>
+                            </select>
+                              <p class="desc light uk-margin-remove">
+                                <span></span>
+                                <span uk-icon="icon: chevron-down"></span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="uk-width-1-5@s">
+                    <div>
+                      <div class="uk-text-center search-container">
+                        <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </section>
+      </div>
+    </div>
+  </section>
+
+
+
+
+      <template v-for="(content, index) in home.body">
+        <template v-if="content.slice_type == 'seccion_carrusel_informativo'">
+          <GalleryContentText :content="content"></GalleryContentText>
+        </template>
+        <template v-if="content.slice_type == 'imagen_informativa'">
+          <SectionImageContent :content="content"></SectionImageContent>
+        </template>
+        <template v-if="content.slice_type == 'full_imagen_con_texto'">
+          <FullWidthImageText :content="content"></FullWidthImageText>
+        </template>
+        <template v-if="content.slice_type == 'carrusel_de_imagenes_con_encabezado'">
+          <HeaderCarousel :content="content"></HeaderCarousel>
+        </template>
+      </template>
+
+</div>
+</template>
+
+<script>
+
+import Navigator from '~/components/mainui/Navigator'
+import GalleryContentText from '~/components/prismic/GalleryContentText'
+import SectionImageContent from '~/components/prismic/SectionImageContent'
+import FullWidthImageText from '~/components/prismic/FullWidthImageText'
+import HeaderCarousel from '~/components/prismic/HeaderCarousel'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import {
+  mapState
+} from 'vuex'
+
+export default {
+  data() {
+    return {
+      att: {
+        controls: false,
+        playsinline: true,
+        loop: true,
+        autoplay: true,
+        muted: true,
+      }
+    }
+  },
+
+  computed: {
+    fas () {
+         return fas
+      },
+      ...mapState({
+        home: state => state.home.home.data,
+      })
+  },
+  components: {
+    GalleryContentText,
+    SectionImageContent,
+    FullWidthImageText,
+    HeaderCarousel
+  }
+}
+</script>

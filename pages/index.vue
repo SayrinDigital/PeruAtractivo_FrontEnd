@@ -11,86 +11,157 @@
           <div class="uk-height-small uk-hidden@s"></div>
           <p class="light head">{{ $prismic.asText(home.subtitulo) }}</p>
           <h1 class="uk-width-xlarge@m uk-margin-auto uk-margin-remove-top light main-heading">{{ $prismic.asText(home.encabezado_principal) }}</h1>
+          <a class="uk-position-center-right uk-overlay uk-icon-link down-link" href="#scroll-top" uk-scroll uk-icon="icon: arrow-down; ratio: 1.5"></a>
           <div class="uk-margin-large-top uk-hidden">
             <a class="hl-link-white uk-display-inline-block" href="">{{ $prismic.asText(home.boton_explorar_titulo) }}<span class="uk-margin-small-left" uk-icon="minus"></span></a>
           </div>
         </div>
-          <section class="searcher uk-position-relative">
-            <div class="uk-container">
-              <div class="container">
-                <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
-                  <div class="uk-width-2-5@s">
+        <section class="searcher uk-hidden@s">
+          <div class="uk-container">
+            <div class="container">
+              <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
+                <div class="uk-width-2-5@s">
+                  <div>
                     <div>
-                      <div>
-                        <div class="uk-inline uk-width-1-1">
-                          <span class="uk-form-icon"><fa :icon="['fas', 'map']"  /></span>
-                          <input class="uk-input uk-form-blank blank-form uk-width-1-1" :placeholder="$prismic.asText(home.buscador_contenido)" type="text">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="uk-width-2-5@s">
-                    <div class="uk-child-width-1-2 uk-text-left@s uk-text-center uk-flex uk-flex-middle" uk-grid>
-                      <div>
-                        <div>
-                          <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
-                          <div>
-                            <div uk-form-custom="target: > * > span:first-child">
-                              <select>
-                                  <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
-                                  <option value="1">Option 01</option>
-                                  <option value="2">Option 02</option>
-                                  <option value="3">Option 03</option>
-                                  <option value="4">Option 04</option>
-                            </select>
-                              <p class="desc light uk-margin-remove">
-                                <span></span>
-                                <span uk-icon="icon: chevron-down"></span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div>
-                        <div>
-                          <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
-                          <div>
-                            <div uk-form-custom="target: > * > span:first-child">
-                              <select>
-                                  <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
-                                  <option value="1">Option 01</option>
-                                  <option value="2">Option 02</option>
-                                  <option value="3">Option 03</option>
-                                  <option value="4">Option 04</option>
-                            </select>
-                              <p class="desc light uk-margin-remove">
-                                <span></span>
-                                <span uk-icon="icon: chevron-down"></span>
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="uk-width-1-5@s">
-                    <div>
-                      <div class="uk-text-center search-container">
-                        <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
+                      <div class="uk-inline uk-width-1-1">
+                        <span class="uk-form-icon"><fa :icon="['fas', 'map']"  /></span>
+                        <input class="uk-input uk-form-blank blank-form uk-width-1-1" :placeholder="$prismic.asText(home.buscador_contenido)" type="text">
                       </div>
                     </div>
                   </div>
                 </div>
-
+                <div class="uk-width-2-5@s">
+                  <div class="uk-child-width-1-2 uk-text-left@s uk-text-center uk-flex uk-flex-middle" uk-grid>
+                    <div>
+                      <div>
+                        <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
+                        <div>
+                          <div uk-form-custom="target: > * > span:first-child">
+                            <select>
+                                <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                                <option value="1">Option 01</option>
+                                <option value="2">Option 02</option>
+                                <option value="3">Option 03</option>
+                                <option value="4">Option 04</option>
+                          </select>
+                            <p class="desc light uk-margin-remove">
+                              <span></span>
+                              <span uk-icon="icon: chevron-down"></span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div>
+                      <div>
+                        <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
+                        <div>
+                          <div uk-form-custom="target: > * > span:first-child">
+                            <select>
+                                <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                                <option value="1">Option 01</option>
+                                <option value="2">Option 02</option>
+                                <option value="3">Option 03</option>
+                                <option value="4">Option 04</option>
+                          </select>
+                            <p class="desc light uk-margin-remove">
+                              <span></span>
+                              <span uk-icon="icon: chevron-down"></span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="uk-width-1-5@s">
+                  <div>
+                    <div class="uk-text-center search-container">
+                      <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
+                    </div>
+                  </div>
+                </div>
               </div>
+
             </div>
-          </section>
+          </div>
+        </section>
       </div>
     </div>
+    <section class="searcher uk-position-bottom-center uk-visible@s">
+      <div class="uk-container">
+        <div class="container">
+          <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
+            <div class="uk-width-2-5@s">
+              <div>
+                <div>
+                  <div class="uk-inline uk-width-1-1">
+                    <span class="uk-form-icon"><fa :icon="['fas', 'map']"  /></span>
+                    <input class="uk-input uk-form-blank blank-form uk-width-1-1" :placeholder="$prismic.asText(home.buscador_contenido)" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="uk-width-2-5@s">
+              <div class="uk-child-width-1-2 uk-text-left@s uk-text-center uk-flex uk-flex-middle" uk-grid>
+                <div>
+                  <div>
+                    <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
+                    <div>
+                      <div uk-form-custom="target: > * > span:first-child">
+                        <select>
+                            <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                            <option value="1">Option 01</option>
+                            <option value="2">Option 02</option>
+                            <option value="3">Option 03</option>
+                            <option value="4">Option 04</option>
+                      </select>
+                        <p class="desc light uk-margin-remove">
+                          <span></span>
+                          <span uk-icon="icon: chevron-down"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div>
+                    <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
+                    <div>
+                      <div uk-form-custom="target: > * > span:first-child">
+                        <select>
+                            <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
+                            <option value="1">Option 01</option>
+                            <option value="2">Option 02</option>
+                            <option value="3">Option 03</option>
+                            <option value="4">Option 04</option>
+                      </select>
+                        <p class="desc light uk-margin-remove">
+                          <span></span>
+                          <span uk-icon="icon: chevron-down"></span>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="uk-width-1-5@s">
+              <div>
+                <div class="uk-text-center search-container">
+                  <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </section>
 
 
-
+  <div id="scroll-top"></div>
 
       <template v-for="(content, index) in home.body">
         <template v-if="content.slice_type == 'seccion_carrusel_informativo'">

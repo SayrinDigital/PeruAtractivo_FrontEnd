@@ -92,6 +92,19 @@ a{
   }
 }
 
+.sticky-navbar-item{
+  background: $main-accent;
+}
+
+.down-link{
+  color: #fff;
+  transition: all 200ms ease-in-out;
+  &:hover{
+    margin-top: 20px;
+    color: #fff;
+  }
+}
+
 .overlay{
   background-color: rgba(0,0,0,0.2);
 }
@@ -99,6 +112,7 @@ a{
 .searcher{
   transition: all 200ms ease-in-out;
   min-width: 80vw;
+  bottom: 40px;
   .container{
     background-color: $main-accent;
     padding: 35px 25px;
@@ -338,15 +352,10 @@ footer{
       display: none;
     }
   }
-
-
 }
 
 @media (max-width: 640px) {
 
-  .searcher{
-    margin-top: 50px;
-  }
 
   .height-compo{
     height: 250px;

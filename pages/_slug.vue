@@ -21,7 +21,7 @@ import SectionImageContent from '~/components/prismic/SectionImageContent'
 
 export default {
   async asyncData({ app, error, params }) {
-    let document = await app.$prismic.api.getByUID('pagina', params.slug, { lang : 'en-gb' })
+    let document = await app.$prismic.api.getByUID('pagina', params.slug, { lang : 'es-es' })
 
     if (document) {
       return { document }

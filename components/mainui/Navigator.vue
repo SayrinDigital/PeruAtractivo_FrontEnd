@@ -8,14 +8,14 @@
 
         <ul class="uk-navbar-nav"  >
           <li v-for="(menulink, index) in menu.data.nav" :key="'menu-link-left-' + index" v-if="menulink.primary.posicion == 'izquierda'">
-            <nuxt-link :to="$prismic.asLink(menulink.primary.link)" >{{ $prismic.asText(menulink.primary.label) }}</nuxt-link>
+            <nuxt-link v-if='$prismic.asLink(menulink.primary.link)' :to="$prismic.asLink(menulink.primary.link)" >{{ $prismic.asText(menulink.primary.label) }}</nuxt-link>
             <template v-if="menulink.items.length>0">
                   <div uk-dropdown="pos: bottom-justify; boundary: #mainnav; boundary-align: true; offset: 0; animation: uk-animation-fade; duration: 250; delay-hide: 100">
                     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
                     <div class="uk-navbar-center">
                       <ul class="uk-navbar-nav">
                          <li v-for="(link, index) in menulink.items">
-                          <nuxt-link :to="$prismic.asLink(link.sub_nav_link)">{{ $prismic.asText(link.sub_nav_link_label) }}</nuxt-link>
+                          <nuxt-link v-if='$prismic.asLink(link.sub_nav_link)' :to="$prismic.asLink(link.sub_nav_link)">{{ $prismic.asText(link.sub_nav_link_label) }}</nuxt-link>
                         </li>
                       </ul>
                     </div>
@@ -38,7 +38,7 @@
 
         <ul class="uk-navbar-nav  uk-visible@s">
           <li  v-for="(menulink, index) in menu.data.nav" :key="'menu-link-right-' + index" v-if="menulink.primary.posicion == 'derecha'">
-            <nuxt-link :to="$prismic.asLink(menulink.primary.link)" >{{ $prismic.asText(menulink.primary.label) }}</nuxt-link>
+            <nuxt-link v-if='$prismic.asLink(menulink.primary.link)' :to="$prismic.asLink(menulink.primary.link)" >{{ $prismic.asText(menulink.primary.label) }}</nuxt-link>
           </li>
           <li>
             <a href="#"><span class="uk-margin-small-right"><fa size="2x" :icon="['fas', 'language']"  /></span><span class="uk-visible@s">{{ menu.lang | literalyzeLanguage }}</span></a>

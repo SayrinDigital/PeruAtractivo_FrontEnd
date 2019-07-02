@@ -9,7 +9,7 @@
             p.head.uk-margin-remove {{ $prismic.asText(content.primary.seccion_subtitulo) }}
             h2.uk-margin-remove-top {{ $prismic.asText(content.primary.seccion_encabezado) }}
             p.desc(class="uk-width-large@s") {{ $prismic.asText(content.primary.seccion_contenido) }}
-            nuxt-link.dark-button(:to="$prismic.asLink(content.primary.seccion_link)") {{ $prismic.asText(content.primary.seccion_link_texto) }} #[span.uk-margin-small-left(uk-icon="minus")]
+            nuxt-link.dark-button(:to="$prismic.asLink(content.primary.seccion_link)", v-if='$prismic.asLink(content.primary.seccion_link)') {{ $prismic.asText(content.primary.seccion_link_texto) }} #[span.uk-margin-small-left(uk-icon="minus")]
 
     div(class="uk-width-3-5@s")
       div

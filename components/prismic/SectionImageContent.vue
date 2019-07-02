@@ -5,7 +5,7 @@
       div(class="uk-width-2-5@s")
         div
           div(v-bind:class="{ 'say-padding-left-container' : content.primary.seccion_alineacion == 'derecha' }")
-            .uk-container
+            .uk-container(v-if="content.primary")
                 p.head.uk-margin-remove {{ $prismic.asText(content.primary.seccion_subtitulo) }}
                 h2.uk-margin-remove-top(class="uk-width-large@s") {{ $prismic.asText(content.primary.seccion_encabezado) }}
                 p.desc(class="uk-width-large@s") {{ $prismic.asText(content.primary.seccion_contenido) }}

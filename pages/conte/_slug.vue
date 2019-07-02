@@ -23,7 +23,7 @@ import Services from '~/components/prismic/page/Services'
 
 export default {
   async asyncData({ app, error, params }) {
-    let document = await app.$prismic.api.getByUID('contenido', params.slug, { lang : 'en-gb' })
+    let document = await app.$prismic.api.getByUID('contenido', params.slug, { lang : 'es-es' })
 
     if (document) {
       return { document }

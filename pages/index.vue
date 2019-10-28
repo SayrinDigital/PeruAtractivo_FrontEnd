@@ -165,16 +165,16 @@
 
       <template v-for="(content, index) in home.body">
         <template v-if="content.slice_type == 'seccion_carrusel_informativo'">
-          <GalleryContentText :content="content"></GalleryContentText>
+          <GalleryContentText :key="'GalleryContentText' + index" :content="content"></GalleryContentText>
         </template>
         <template v-if="content.slice_type == 'imagen_informativa'">
-          <SectionImageContent :content="content"></SectionImageContent>
+          <SectionImageContent :key="'SectionImageContent' + index" :content="content"></SectionImageContent>
         </template>
         <template v-if="content.slice_type == 'full_imagen_con_texto'">
-          <FullWidthImageText :content="content"></FullWidthImageText>
+          <FullWidthImageText :key="'FullWidthImageText' + index" :content="content"></FullWidthImageText>
         </template>
         <template v-if="content.slice_type == 'carrusel_de_imagenes_con_encabezado'">
-          <HeaderCarousel :content="content"></HeaderCarousel>
+          <HeaderCarousel :key="'HeaderCarousel' + index" :content="content"></HeaderCarousel>
         </template>
       </template>
 

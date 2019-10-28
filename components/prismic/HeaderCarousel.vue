@@ -13,6 +13,11 @@
                 .uk-margin.uk-text-center.bottom-text-image
                   p.uk-margin-remove.title {{ $prismic.asText(item.titulo) }}
                   p.uk-margin-remove.sub {{ $prismic.asText(item.imagen_subtitulo) }}
+              div(v-else)
+                img(:src="$prismic.asLink(item.imagen)")
+                .uk-margin.uk-text-center.bottom-text-image
+                  p.uk-margin-remove.title {{ $prismic.asText(item.titulo) }}
+                  p.uk-margin-remove.sub {{ $prismic.asText(item.imagen_subtitulo) }}   
           .uk-text-center
             a.dark-button.uk-display-inline-block.uk-position-small(href="#", uk-slider-item="previous") #[span.uk-icon(uk-icon="arrow-left")]
             a.dark-button.uk-display-inline-block.uk-position-small(href="#", uk-slider-item="next") #[span.uk-icon(uk-icon="arrow-right")]

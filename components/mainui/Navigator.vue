@@ -14,8 +14,8 @@
                     <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
                     <div class="uk-navbar-center">
                       <ul class="uk-navbar-nav">
-                         <li v-for="(link, index) in menulink.items">
-                          <nuxt-link v-if='$prismic.asLink(link.sub_nav_link)' :to="$prismic.asLink(link.sub_nav_link)">{{ $prismic.asText(link.sub_nav_link_label) }}</nuxt-link>
+                         <li v-for="(link, index) in menulink.items" :key="'nav-'+ index">
+                          <nuxt-link  v-if='$prismic.asLink(link.sub_nav_link)' :to="$prismic.asLink(link.sub_nav_link)">{{ $prismic.asText(link.sub_nav_link_label) }}</nuxt-link>
                         </li>
                       </ul>
                     </div>

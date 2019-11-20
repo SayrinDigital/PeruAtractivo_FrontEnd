@@ -8,6 +8,8 @@
          SectionImageContent(:content="slice")
       template(v-if="slice.slice_type=='grupo_de_items'")
          ItemsGroup(:content="slice")
+      template(v-if="slice.slice_type=='full_width_image'")
+         FullWidthImage(:content="slice")
 
 
 </template>
@@ -17,6 +19,7 @@
 import Header from '~/components/prismic/page/Header'
 import ItemsGroup from '~/components/prismic/page/ItemsGroup'
 import SectionImageContent from '~/components/prismic/SectionImageContent'
+import FullWidthImage from '~/components/prismic/page/FullWidthImage'
 
 
 export default {
@@ -33,7 +36,7 @@ export default {
     Header,
     SectionImageContent,
     ItemsGroup,
-
+    FullWidthImage
   }
 }
 </script>

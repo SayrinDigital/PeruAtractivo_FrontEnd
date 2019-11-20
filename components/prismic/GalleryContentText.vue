@@ -18,7 +18,7 @@
             li(v-for="(item,index) in content.items", :key="'slider-image-gallery-' + index")
               a.uk-display-inline-block(target="_blank", v-if="item.seccion_slider_link.link_type == 'Web'", :href="item.seccion_slider_link.url")
                 img(:src="$prismic.asLink(item.seccion_slider_imagen)")
-              nuxt-link.uk-display-inline-block(target="_blank",v-else-if="item.seccion_slider_link.link_type == 'Document'", :to="$prismic.asLink(item.seccion_slider_link)")
+              nuxt-link.uk-display-inline-block(v-else-if="item.seccion_slider_link.link_type == 'Document'", :to="$prismic.asLink(item.seccion_slider_link)")
                 img(:src="$prismic.asLink(item.seccion_slider_imagen)")
               img(v-else, :src="$prismic.asLink(item.seccion_slider_imagen)")
               .uk-margin.uk-text-center.bottom-text-image

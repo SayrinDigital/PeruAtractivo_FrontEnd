@@ -16,7 +16,11 @@
         .uk-position-relative.uk-visible-toggle.uk-light(uk-slider="autoplay: true; autoplay-interval: 1500", tabindex="-1")
           ul.uk-slider-items.uk-grid.uk-child-width-1-2
             li(v-for="(item,index) in content.items", :key="'slider-image-gallery-' + index")
-              img(:src="$prismic.asLink(item.seccion_slider_imagen)")
+              a.uk-display-inline-block(target="_blank", v-if="item.seccion_slider_link.link_type == 'Web'", :href="item.seccion_slider_link.url")
+                img(:src="$prismic.asLink(item.seccion_slider_imagen)")
+              nuxt-link.uk-display-inline-block(target="_blank",v-else-if="item.seccion_slider_link.link_type == 'Document'", :to="$prismic.asLink(item.seccion_slider_link)")
+                img(:src="$prismic.asLink(item.seccion_slider_imagen)")
+              img(v-else, :src="$prismic.asLink(item.seccion_slider_imagen)")
               .uk-margin.uk-text-center.bottom-text-image
                 p.uk-margin-remove.title {{ $prismic.asText(item.seccion_slider_titulo) }}
                 p.uk-margin-remove.title {{ $prismic.asText(item.seccion_slider_subtitulo) }}

@@ -1,6 +1,8 @@
 <template>
 <div>
-  <section class="uk-cover-container fix-position-nav main-header-home">
+  
+<no-ssr>
+    <section class="uk-cover-container fix-position-nav main-header-home">
     <video autoplay loop muted playsinline uk-cover>
         <source :src="$prismic.asLink(home.background)" type="video/mp4">
     </video>
@@ -16,7 +18,7 @@
             <a class="hl-link-white uk-display-inline-block" href="">{{ $prismic.asText(home.boton_explorar_titulo) }}<span class="uk-margin-small-left" uk-icon="minus"></span></a>
           </div>
         </div>
-        <section class="searcher uk-hidden@s">
+        <!--<section class="searcher uk-hidden@s">
           <div class="uk-container">
             <div class="container">
               <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
@@ -37,7 +39,7 @@
                         <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
                         <div>
                           <div uk-form-custom="target: > * > span:first-child">
-                            <select>
+                            <select class="dark-select">
                                 <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
                                 <option value="1">Option 01</option>
                                 <option value="2">Option 02</option>
@@ -57,7 +59,7 @@
                         <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
                         <div>
                           <div uk-form-custom="target: > * > span:first-child">
-                            <select>
+                            <select class="dark-select">
                                 <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
                                 <option value="1">Option 01</option>
                                 <option value="2">Option 02</option>
@@ -85,13 +87,13 @@
 
             </div>
           </div>
-        </section>
+        </section>-->
       </div>
     </div>
     <section class="searcher uk-position-bottom-center uk-visible@s">
       <div class="uk-container">
         <div class="container">
-          <div class=" uk-text-center uk-flex-middle uk-flex" uk-grid>
+          <div class="uk-text-center uk-flex-middle uk-flex" uk-grid>
             <div class="uk-width-2-5@s">
               <div>
                 <div>
@@ -108,8 +110,8 @@
                   <div>
                     <p class="title-section-search">{{ $prismic.asText(home.buscador_destinos) }}</p>
                     <div>
-                      <div uk-form-custom="target: > * > span:first-child">
-                        <select>
+                      <div uk-form-custom="target: true">
+                        <select class="dark-select">
                             <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
                             <option value="1">Option 01</option>
                             <option value="2">Option 02</option>
@@ -128,8 +130,8 @@
                   <div>
                     <p class="title-section-search">{{ $prismic.asText(home.buscador_servicios) }}</p>
                     <div>
-                      <div uk-form-custom="target: > * > span:first-child">
-                        <select>
+                      <div uk-form-custom="target: true">
+                        <select class="dark-select">
                             <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
                             <option value="1">Option 01</option>
                             <option value="2">Option 02</option>
@@ -146,20 +148,20 @@
                 </div>
               </div>
             </div>
-            <div class="uk-width-1-5@s">
+            <!--<div class="uk-width-1-5@s">
               <div>
                 <div class="uk-text-center search-container">
                   <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
                 </div>
               </div>
-            </div>
+            </div>-->
           </div>
 
         </div>
       </div>
     </section>
   </section>
-
+  </no-ssr>
 
   <div id="scroll-top"></div>
 

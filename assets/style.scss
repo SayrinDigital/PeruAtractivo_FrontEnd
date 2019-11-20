@@ -150,6 +150,13 @@ a{
   min-height: 520px;
 }
 
+select.dark-select{
+  option{
+    background-color: $main-accent;
+    color: #fff;
+  }
+}
+
 .tour-container{
   .divider{
     display: inline-block;

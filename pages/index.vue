@@ -113,10 +113,7 @@
                       <div uk-form-custom="target: true">
                         <select class="dark-select">
                             <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
-                            <option value="1">Option 01</option>
-                            <option value="2">Option 02</option>
-                            <option value="3">Option 03</option>
-                            <option value="4">Option 04</option>
+                            <option v-for="(destino, index) in home.destinos" :key="'destino' + index" value="1">{{ $prismic.asText(destino.lugar) }}</option>
                       </select>
                         <p class="desc light uk-margin-remove">
                           <span></span>
@@ -133,10 +130,8 @@
                       <div uk-form-custom="target: true">
                         <select class="dark-select">
                             <option value="">{{ $prismic.asText(home.buscador_elegir_texto) }}</option>
-                            <option value="1">Option 01</option>
-                            <option value="2">Option 02</option>
-                            <option value="3">Option 03</option>
-                            <option value="4">Option 04</option>
+                            <option v-for="(servicio, index) in home.servicios" :key="'servicio' + index" value="1">{{ $prismic.asText(servicio.nombre) }}</option>
+
                       </select>
                         <p class="desc light uk-margin-remove">
                           <span></span>

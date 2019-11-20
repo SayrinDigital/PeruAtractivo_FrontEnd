@@ -12,7 +12,7 @@
                   p.desc {{ $prismic.asText(content.primary.seccion_contenido) }}
                   nuxt-link.dark-button(:to="$prismic.asLink(content.primary.seccion_link)", v-if="$prismic.asLink(content.primary.seccion_link)") {{ $prismic.asText(content.primary.seccion_link_texto) }} #[span.uk-margin-small-left(uk-icon="minus")]
         div(class="uk-width-1-2@s", v-bind:class="{ 'uk-flex-first' : content.primary.seccion_alineacion == 'izquierda' }")
-          div(uk-slider)
+          div(uk-slider="autoplay: true; autoplay-interval: 1500")
             ul.uk-slider-items.uk-grid(class="uk-child-width-1-1")
               li(v-for="(item, index) in content.items", :key="'section-image-container-' + index")
                 img.uk-width-1-1(:src="$prismic.asLink(item.image)")

@@ -1,7 +1,7 @@
 <template lang="pug">
 
   section.uk-background-cover(:data-src="$prismic.asLink(content.primary.fondo)", uk-img)
-    .uk-section.uk-section-large
+    .uk-section
       .uk-container(v-if="content.primary")
         h2.uk-text-capitalize(class="uk-width-large@s") {{ $prismic.asText(content.primary.titulo) }}
         p.desc(class="uk-width-large@s") {{ $prismic.asText(content.primary.descripcion) }}

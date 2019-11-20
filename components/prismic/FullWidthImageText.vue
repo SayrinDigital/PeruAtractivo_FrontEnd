@@ -2,7 +2,7 @@
 
   section.uk-position-relative.uk-background-cover(:data-src="$prismic.asLink(content.primary.fondo)", uk-img, uk-parallax="bgy: -200")
     div
-      .uk-section.uk-section-large.uk-position-relative
+      .uk-section.uk-position-relative
         .uk-container.uk-text-center(v-if="content.primary")
           img(:src="$prismic.asLink(content.primary.icono)")
           h2.light.uk-margin-auto(class="uk-width-large@m") {{ $prismic.asText(content.primary.titulo) }}

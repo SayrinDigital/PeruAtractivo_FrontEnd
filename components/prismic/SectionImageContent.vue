@@ -1,6 +1,6 @@
 <template lang="pug">
 
-  section.uk-section.uk-section-large(v-if="content.primary")
+  section.uk-section(v-if="content.primary")
     .uk-container
       .uk-flex.uk-flex-middle(uk-grid)
         div(class="uk-width-1-2@s")

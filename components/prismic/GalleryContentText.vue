@@ -1,6 +1,6 @@
 <template lang="pug">
 
- section.uk-section.uk-section-large.uk-background-cover(uk-img, v-if='content.primary', :data-src="$prismic.asLink(content.primary.seccion_background)")
+ section.uk-section.uk-background-cover(uk-img, v-if='content.primary', :data-src="$prismic.asLink(content.primary.seccion_background)")
   div.uk-flex.uk-flex-middle(uk-grid)
     div(class="uk-width-2-5@s")
       div

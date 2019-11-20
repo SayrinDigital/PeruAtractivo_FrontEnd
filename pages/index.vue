@@ -143,13 +143,13 @@
                 </div>
               </div>
             </div>
-            <!--<div class="uk-width-1-5@s">
+            <div class="uk-width-1-5@s">
               <div>
                 <div class="uk-text-center search-container">
                   <a href="" class="search-button uk-display-inline-block"><span class="uk-icon uk-margin-small-right" uk-icon="search"></span>{{ $prismic.asText(home.buscador_boton_buscar_titulo) }}</a>
                 </div>
               </div>
-            </div>-->
+            </div>
           </div>
 
         </div>
